@@ -105,7 +105,9 @@ onMounted(async () => {
   const user = await api.user.get(route.params.id)
   username.value = user.username
   email.value = user.email
-  permissions.value = await api.user.getPermissions(route.params.id)
+  if (api.auth.hasScope('users.perms.view')) {
+    permissions.value = await api.user.getPermissions(route.params.id)
+  }
   otpactive.value = user.otpactive !== undefined ? user.otpactive : false
 })
 
