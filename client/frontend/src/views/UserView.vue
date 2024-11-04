@@ -181,7 +181,7 @@ function togglePermission(scope) {
           @blur="passwordError = (validate.password(password) || password.length === 0) ? '' : t('error.PasswordInvalid')"
         />
         <div v-if="$api.auth.hasScope('users.perms.view')">
-          <h2>{{ t('users.Authentication') }}: {{ otpActive ? t('users.TwoFactor') : t('users.Password') }}</h2>
+          <h2>{{ t('users.OtpEnabled') }}: {{ otpActive ? t('common.Yes') : t('common.No') }}</h2>
         </div>
         <btn v-if="$api.auth.hasScope('users.info.edit')" color="primary" :disabled="!canSubmitDetails()" @click="submitDetails()"><icon name="save" />{{ t('users.UpdateDetails') }}</btn>
         <btn v-if="$api.auth.hasScope('users.info.edit')" color="error" @click="deleteUser()"><icon name="remove" />{{ t('users.Delete') }}</btn>

@@ -48,5 +48,7 @@
       "List": "List"
     }
   },
-  "NoResults": "No Results"
+  "NoResults": "No Results",
+  "Yes": "Yes",
+  "No": "No"
 }
